@@ -1,0 +1,220 @@
+//  Flexible Box Layout is a module of CSS that defines a CSS box model optimized for user interface design. In the flex layout model, the children of a flex container can be laid out in any direction, and can “flex” their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions.
+
+// Learn More:
+
+//https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout
+
+//https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties
+
+////////// Flexbox Container Properties
+
+//  Flexbox Containers  - The 'flex' value causes an element to generate a block-level flex container box.
+
+.flex {
+  display: flex;
+}
+
+.flex-inline  {
+  display: inline-flex;
+}
+
+// Flexbox Wrap - The initial flexbox concept is the container to set its items in one single line. The flex-wrap property controls if the flex container lay out its items in single or multiple lines, and the direction the new lines are stacked in.
+
+// Default: no-row
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-wrap-reverse  {
+  flex-wrap: wrap-reverse;
+}
+
+// Flexbox Direction  - This property specifies how flex items are laid out in the flex container, by setting the direction of the flex container’s main axis. They can be laid out in two main directions, like rows horizontally or like columns vertically.
+
+// Default: row
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.row.reverse  {
+  flex-direction: row-reverse;
+}
+
+.col.reverse {
+  flex-direction: column-reverse;
+}
+
+// Flexbox Align Items - Flex items can be aligned in the cross axis of the current line of the flex container, similar to justify-content but in the perpendicular direction. This property sets the default alignment for all flex items, including the anonymous ones.
+
+// Default: stretch
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.items-stretch  {
+  align-items: stretch;
+}
+
+//  Flexbox Justify Content - The justify-content property aligns flex items along the main axis of the current line of the flex container. It helps distribute left free space when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size.
+
+// Default: flex-start
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+//  Flexbox Align Content - The align-content property aligns a flex container’s lines within the flex container when there is extra space in the cross-axis, similar to how justify-content aligns individual items within the main-axis.
+
+// Default: stretch
+
+.content-start {
+  align-content: flex-start;
+}
+
+.content-center {
+  align-content: center;
+}
+
+.content-end {
+  align-content: flex-end;
+}
+
+.content-between {
+  align-content: space-between;
+}
+
+.content-around {
+  align-content: space-around;
+}
+
+.content-stretch {
+  align-content: stretch;
+}
+
+////////// Flexbox Item Properties
+
+//  Flexbox Flex  - This property is the shorthand for the flex-grow, flex-shrink and flex-basis properties. Among other values it also can be set to auto (1 1 auto) and none (0 0 auto).
+
+// Default: 0 1 auto
+
+.single-flex-child {
+  flex: auto;
+}
+
+.double-flex-child {
+  flex: 2 auto;
+}
+
+// Flexbox Order  - The order property controls the order in which children of a flex container appear inside the flex container. By default they are ordered as initially added in the flex container.
+
+.order-0  {
+  order: 0;
+}
+
+.order-1  {
+  order: 1;
+}
+
+.order-2  {
+  order: 2;
+}
+
+.order-3  {
+  order: 3;
+}
+
+.order-last  {
+  order: 999;
+}
+
+//  Flexbox Align Self  - This align-self property allows the default alignment (or the one specified by align-items) to be overridden for individual flex items. Refer to align-items explanation for flex container to understand the available values.
+
+//  Default: stretch
+
+.self-start {
+  align-self: flex-start }
+
+.self-end {
+  align-self: flex-end }
+
+.self-center  {
+  align-self: center }
+
+.self-baseline  {
+  align-self: baseline }
+
+.self-stretch {
+  align-self: stretch }
+
+//  Mobile
+
+@media (max-width: 768px) {
+
+  /* two ways to make elements vertical on mobile */
+
+  .onecol-flex-mobile {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+  }
+
+  .onecol-flex-mobile-child {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    -webkit-flex-basis: 100%;
+  }
+
+  /* used in conjuction to force 2 col mobile */
+
+  .flex-wrap-mobile {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .half-flex-mobile-child {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    -webkit-flex-basis: 50%;
+  }
+
+}
